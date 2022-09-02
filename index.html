@@ -5,8 +5,70 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Global News</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
+        "
+        />
     </head>
-    <body>
+    <body class="m-4">
+        <header>
+            <!-- Nav bar -->
+            <nav class="navbar navbar-expand-lg bg-light mb-4">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"
+                        ><span>Global</span> <span>News</span></a
+                    >
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse justify-content-end"
+                        id="navbarNavAltMarkup"
+                    >
+                        <div class="navbar-nav">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="#"
+                                >News</a
+                            >
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="#"
+                                >Blog</a
+                            >
+                            <img
+                                style="width: 2.5rem"
+                                src="images/face-2.png"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <!-- News Category from API-->
+            <section>
+                <ul
+                    id="category-li-container"
+                    class="list-group list-group-horizontal justify-content-around bg-light p-2"
+                ></ul>
+            </section>
+        </main>
+
         <script src="js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js
+        "></script>
     </body>
 </html>
