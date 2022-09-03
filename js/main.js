@@ -163,3 +163,5 @@ const setNewsToModal = newsDetails => {
         .getElementById("news-image")
         .setAttribute("src", newsDetails.image_url);
 };
+
+// End of script part-------Thanks-----------
