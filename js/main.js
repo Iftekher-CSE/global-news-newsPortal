@@ -73,10 +73,12 @@ const displayDetailsNews = newsItems => {
                             </div>
                             <div class="col-md-10 p-3">
                                 <div
-                                    class="card-body d-flex flex-column align-content-between"
+                                    class="card-body d-flex flex-column"
                                 >
                                     <h5 class="card-title">${item.title}</h5>
-                                    <p class="card-text over-flow-control mb-4">${item.details}</p>
+                                    <p class="card-text over-flow-control mb-4">${
+                                        item.details
+                                    }</p>
                                     <div class="d-flex justify-content-around">
                                         <div
                                             class="d-flex flex-row align-items-center"
@@ -86,21 +88,31 @@ const displayDetailsNews = newsItems => {
                                                 src="${item.author.img}"
                                                 alt=""
                                             />
-                                            <p class="m-0 ps-2"> ${item.author.name}</p>
+                                            <p class="m-0 ps-2"> ${
+                                                item.author.name
+                                                    ? item.author.name
+                                                    : "Author Name not found"
+                                            }</p>
                                         </div>
                                         <div
                                             class="d-flex flex-row justify-content-around align-items-center"
                                         >
                                             <i class="fa-regular fa-eye"></i>
-                                            <p class="m-0"> ${item.total_view}</p>
+                                            <p class="m-0"> ${
+                                                item.total_view
+                                            }</p>
                                         </div>
                                         <div class="d-flex align-items-center">
                                             <i class="fa-solid fa-star-half-stroke"></i>
-                                            <p class="m-0"> ${item.rating.number}</p>
+                                            <p class="m-0"> ${
+                                                item.rating.number
+                                            }</p>
                                         </div>
                                         <div class="d-flex align-items-center">
                                             <!-- Button trigger modal -->
-                                             <button type="button" onClick="loadNewsDetails('${item._id}')" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newsDetailsModal">
+                                             <button type="button" onClick="loadNewsDetails('${
+                                                 item._id
+                                             }')" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newsDetailsModal">
                                              News Details
                                             </button>
                                         </div>
