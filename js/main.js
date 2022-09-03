@@ -31,6 +31,9 @@ loadNewsCategory();
 //display details news as per category
 const loadDetailsNews = newsId => {
     try {
+        const spinnerStart = document
+            .getElementById("spinner")
+            .classList.remove("d-none");
         url = `https://openapi.programming-hero.com/api/news/category/${newsId}`;
         fetch(url)
             .then(res => res.json())
@@ -51,8 +54,12 @@ const displayDetailsNews = newsItems => {
         "news-details-container"
     );
     newsDetailsContainer.innerHTML = "";
+
+    // sort according to value
+    newsItems.sort((a, b) => (a.total_view < b.total_view ? 1 : -1));
+
+    // loop using forEach
     newsItems.forEach(item => {
-        // console.log(item);
         const newsDiv = document.createElement("div");
         newsDiv.classList.add("card", "mb-4");
         newsDiv.innerHTML = `
@@ -66,7 +73,7 @@ const displayDetailsNews = newsItems => {
                             </div>
                             <div class="col-md-10 p-3">
                                 <div
-                                    class="card-body d-flex flex-column align-content-around"
+                                    class="card-body d-flex flex-column align-content-between"
                                 >
                                     <h5 class="card-title">${item.title}</h5>
                                     <p class="card-text over-flow-control mb-4">${item.details}</p>
@@ -104,6 +111,9 @@ const displayDetailsNews = newsItems => {
         `;
         newsDetailsContainer.appendChild(newsDiv);
     });
+    const spinnerStop = document
+        .getElementById("spinner")
+        .classList.add("d-none");
 };
 
 // load news details api call
