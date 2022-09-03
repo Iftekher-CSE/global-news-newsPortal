@@ -52,7 +52,7 @@ const displayDetailsNews = newsItems => {
     );
     newsDetailsContainer.innerHTML = "";
     newsItems.forEach(item => {
-        console.log(item);
+        // console.log(item);
         const newsDiv = document.createElement("div");
         newsDiv.classList.add("card", "mb-4");
         newsDiv.innerHTML = `
@@ -88,13 +88,14 @@ const displayDetailsNews = newsItems => {
                                             <p class="m-0"> ${item.total_view}</p>
                                         </div>
                                         <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-star-half-stroke"></i>
-                                        <p class="m-0"> ${item.rating.number}</p>
+                                            <i class="fa-solid fa-star-half-stroke"></i>
+                                            <p class="m-0"> ${item.rating.number}</p>
                                         </div>
                                         <div class="d-flex align-items-center">
-                                            <i
-                                                class="fa-solid fa-arrow-right-long"
-                                            ></i>
+                                            <!-- Button trigger modal -->
+                                             <button type="button" onClick="loadNewsDetails('${item._id}')" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#newsDetailsModal">
+                                             News Details
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -103,4 +104,40 @@ const displayDetailsNews = newsItems => {
         `;
         newsDetailsContainer.appendChild(newsDiv);
     });
+};
+
+// load news details api call
+const loadNewsDetails = newsId => {
+    const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
+    try {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setNewsToModal(data.data[0]));
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+// setNewsToModal
+const setNewsToModal = newsDetails => {
+    // console.log(newsDetails);
+    const title = (document.getElementById("newsDetailsModalLabel").innerText =
+        newsDetails.title);
+    const author = (document.getElementById("authore-name").innerText =
+        newsDetails.author.name
+            ? newsDetails.author.name
+            : "Author Name not found");
+    const pubDate = (document.getElementById("published-date").innerText =
+        newsDetails.author.published_date
+            ? newsDetails.author.published_date
+            : "Published Date not found");
+    const view = (document.getElementById("total-view").innerText =
+        newsDetails.total_view
+            ? newsDetails.total_view
+            : "News View data not found");
+    const newsBody = (document.getElementById("news-body").innerText =
+        newsDetails.details);
+    const newsImage = document
+        .getElementById("news-image")
+        .setAttribute("src", newsDetails.image_url);
 };

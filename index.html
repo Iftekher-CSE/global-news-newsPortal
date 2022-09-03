@@ -45,12 +45,138 @@
                                 href="#"
                                 >News</a
                             >
+                            <!-- Button trigger modal -->
                             <a
                                 class="nav-link active"
+                                data-bs-toggle="modal"
+                                data-bs-target="#BlogModal"
                                 aria-current="page"
                                 href="#"
                                 >Blog</a
                             >
+                            <!-- Modal -->
+                            <div
+                                class="modal fade"
+                                id="BlogModal"
+                                tabindex="-1"
+                                aria-labelledby="BlogModalLabel"
+                                aria-hidden="true"
+                            >
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5
+                                                class="modal-title"
+                                                id="BlogModalLabel"
+                                            >
+                                                Question & Answer Blog
+                                            </h5>
+                                            <button
+                                                type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                            ></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6>
+                                                Question 01: What are the
+                                                difference between var, let and
+                                                const?
+                                            </h6>
+                                            <p>
+                                                <u>Answer:</u> The scope of a
+                                                var variable is functional
+                                                scope. The scope of a let
+                                                variable is block scope. The
+                                                scope of a const variable is
+                                                block scope.
+                                                <br />
+                                                Var can be updated and
+                                                re-declared. Let can be updated
+                                                but cannot be re-declared. const
+                                                cannot be updated or
+                                                re-declared. <br />
+                                                Var and let can be declared
+                                                without initialization but const
+                                                cannot be declared without
+                                                initialization.
+                                            </p>
+                                            <hr />
+                                            <h6>
+                                                Question 02: What are the
+                                                difference between arrow
+                                                function and function
+                                                expression?
+                                            </h6>
+                                            <p>
+                                                <u>Answer:</u>
+                                                Regular JavaScript function has
+                                                it's own dynamic value of
+                                                <code>this</code>. But the arrow
+                                                function doesn't have it's own
+                                                <code>this</code>.
+                                                <br />Arguments objects are not
+                                                available in arrow functions,
+                                                but are available in regular
+                                                functions. <br />
+                                                If the return statement is
+                                                missing, or there's no
+                                                expression after return
+                                                statement, the regular function
+                                                implicitely returns
+                                                <code>undefined</code>. If the
+                                                arrow function contains one
+                                                expression, and you omit the
+                                                function's curly braces, then
+                                                the expression is implicitly
+                                                returned.
+                                            </p>
+                                            <hr />
+                                            <h6>
+                                                Question 03: What are the
+                                                benefits of using template
+                                                string?
+                                            </h6>
+                                            <p>
+                                                <u>Answer: </u>Template strings
+                                                are a powerful feature of modern
+                                                JavaScript released in ES6. It
+                                                lets us insert/interpolate
+                                                variables and expressions into
+                                                strings without needing to
+                                                concatenate. It allows us to
+                                                create strings that are complex
+                                                and contain dynamic elements.
+                                                <br />
+                                                Template Literals use back-ticks
+                                                (``). <br />
+                                                With template literals, you can
+                                                use both single and double
+                                                quotes inside a string. <br />
+                                                Template literals allows
+                                                multiline strings. <br />
+                                                Template literals allow
+                                                variables in strings.
+                                                <br />Template literals provide
+                                                an easy way to interpolate
+                                                variables and expressions into
+                                                strings. <br />
+                                                Suport HTML Templates
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button
+                                                type="button"
+                                                class="btn btn-secondary"
+                                                data-bs-dismiss="modal"
+                                            >
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <img
                                 style="width: 2.5rem"
                                 src="images/face-2.png"
@@ -146,6 +272,63 @@
                             </div>
                         </div>
                     </div> -->
+                </div>
+                <!-- Modal -->
+                <div>
+                    <div
+                        class="modal fade"
+                        id="newsDetailsModal"
+                        tabindex="-1"
+                        aria-labelledby="newsDetailsModalLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5
+                                        class="modal-title"
+                                        id="newsDetailsModalLabel"
+                                    ></h5>
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6>
+                                        Author Name:
+                                        <span id="authore-name"></span>
+                                    </h6>
+                                    <h6>
+                                        Published Date:
+                                        <span id="published-date"></span>
+                                    </h6>
+                                    <p>
+                                        Total View:
+                                        <span id="total-view"></span>
+                                    </p>
+                                    <p id="news-body"></p>
+                                    <img
+                                        class="img-fluid"
+                                        id="news-image"
+                                        src=""
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
