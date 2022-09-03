@@ -67,7 +67,7 @@ const displayDetailsNews = newsItems => {
                             <div class="col-md-2">
                                 <img
                                     src="${item.thumbnail_url}"
-                                    class="img-fluid rounded-3 m-3"
+                                    class="img-fluid rounded-3 m-3 mx-auto d-block"
                                     alt="..."
                                 />
                             </div>
@@ -76,12 +76,12 @@ const displayDetailsNews = newsItems => {
                                     class="card-body d-flex flex-column"
                                 >
                                     <h5 class="card-title">${item.title}</h5>
-                                    <p class="card-text over-flow-control mb-4">${
+                                    <p class="card-text over-flow-control mb-5">${
                                         item.details
                                     }</p>
-                                    <div class="d-flex justify-content-around">
+                                    <div class="d-flex justify-content-around flex-wrap">
                                         <div
-                                            class="d-flex flex-row align-items-center"
+                                            class="d-flex flex-row align-items-center mx-3"
                                         >
                                             <img class="rounded-5"
                                                 style="width: 3rem"
@@ -95,20 +95,20 @@ const displayDetailsNews = newsItems => {
                                             }</p>
                                         </div>
                                         <div
-                                            class="d-flex flex-row justify-content-around align-items-center"
+                                            class="d-flex flex-row justify-content-around align-items-center mx-3"
                                         >
                                             <i class="fa-regular fa-eye"></i>
                                             <p class="m-0"> ${
                                                 item.total_view
                                             }</p>
                                         </div>
-                                        <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center mx-3">
                                             <i class="fa-solid fa-star-half-stroke"></i>
                                             <p class="m-0"> ${
                                                 item.rating.number
                                             }</p>
                                         </div>
-                                        <div class="d-flex align-items-center">
+                                        <div class="d-flex align-items-center mx-3">
                                             <!-- Button trigger modal -->
                                              <button type="button" onClick="loadNewsDetails('${
                                                  item._id
