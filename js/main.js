@@ -69,7 +69,7 @@ const displayDetailsNews = newsItems => {
                                     class="card-body d-flex flex-column align-content-around"
                                 >
                                     <h5 class="card-title">${item.title}</h5>
-                                    <p class="card-text">${item.details}</p>
+                                    <p class="card-text over-flow-control mb-4">${item.details}</p>
                                     <div class="d-flex justify-content-around">
                                         <div
                                             class="d-flex flex-row align-items-center"
