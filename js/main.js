@@ -29,21 +29,21 @@ const displayCategory = categories => {
 loadNewsCategory();
 
 //display details news as per category
-const loadDetailsNews = newsId => {
+const loadDetailsNews = categoryId => {
     try {
         const spinnerStart = document
             .getElementById("spinner")
             .classList.remove("d-none");
-        url = `https://openapi.programming-hero.com/api/news/category/${newsId}`;
+        url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
         fetch(url)
             .then(res => res.json())
-            .then(data => displayDetailsNews(data.data));
+            .then(data => displayAllNewsCategory(data.data));
     } catch (error) {
         console.log(error);
     }
 };
 // display news Count
-const displayDetailsNews = newsItems => {
+const displayAllNewsCategory = newsItems => {
     // display News Count
     const newsCountDisplay = (document.getElementById(
         "news-count-display"
