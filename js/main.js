@@ -67,21 +67,24 @@ const displayAllNewsCategory = newsItems => {
                             <div class="col-md-2">
                                 <img
                                     src="${item.thumbnail_url}"
-                                    class="img-fluid rounded-3 m-3 mx-auto d-block"
+                                    class="img-fluid rounded-3 mx-auto d-block"
                                     alt="..."
                                 />
                             </div>
-                            <div class="col-md-10 p-3">
+                            <div class="col-md-10 px-md-3">
                                 <div
-                                    class="card-body d-flex flex-column"
+                                    class="card-body py-md-0"
                                 >
-                                    <h5 class="card-title">${item.title}</h5>
-                                    <p class="card-text over-flow-control mb-5">${
+                                    <div class="d-flex flex-column">
+                                    <h5 class=" mt-md-3 card-title">${
+                                        item.title
+                                    }</h5>
+                                    <p class="card-text over-flow-control mb-md-5">${
                                         item.details
                                     }</p>
-                                    <div class="d-flex justify-content-around flex-wrap">
+                                    <div class="d-flex justify-content-around flex-wrap mt-md-5">
                                         <div
-                                            class="d-flex flex-row align-items-center mx-3"
+                                            class="d-flex flex-row align-items-center mx-3  mb-md-2"
                                         >
                                             <img class="rounded-5"
                                                 style="width: 3rem"
@@ -116,6 +119,7 @@ const displayAllNewsCategory = newsItems => {
                                              News Details
                                             </button>
                                         </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
